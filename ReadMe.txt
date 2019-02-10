@@ -21,7 +21,7 @@ How to Interact with the website?
 
 First step is to open the home.html page which is the landing page of the website. On the navigation bar , useful options like Login, Sign up,and Search Events are given.
 From the homepage users can sign up Sign Up for the DalEvents website in order to enable the features like Tab Filtering for events, events by date and user profile.After successful sgn up users will be redirected to Log In page. After successfull log in, users will be redirected to home page with the special features enabled.
-User can access the their profiles fromm the navigation bar by clicking on the user icon on the top right. With the date picker feature users can select the date f
+User can access the their profiles fromm the navigation bar by clicking on the user icon on the top right. With the date picker feature users can select the date.
 The whole website flow for the website is given below: 
 
 Website Flow : 
