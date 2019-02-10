@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Registration - DalEvents</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" type="text/css" href="styles/register.css">
+</head>
+<body>
+<div class="container-fluid bgStyle">
+
+	<div class="row">
+		<div class="col-md-4 col-sm-4 col-xs-12"></div>
+		<div class="col-md-4 col-sm-4 col-xs-12">
+			
+			<form method="POST" name="logform" class="formStyle" action="loginform.html"  onsubmit="return validate();" >
+				<h1>DalEvents Sign Up</h1>
+				<br/>
+				<div class="form-group input-group">
+					<div class="input-group-prepend">
+					    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+					 </div>
+			        <input class="form-control" name="fullname" placeholder="Full name (Firstname Lastname)*" type="text" pattern="[A-Za-z-0-9]+\s[A-Za-z-'0-9]+">
+			    </div> 
+			    <div id="name_error" class="val_error"></div>
+
+			    <div class="form-group input-group">
+			    	<div class="input-group-prepend">
+					    <span class="input-group-text" id="emailIcon"> <i class="fa fa-envelope"></i> </span>
+					 </div>
+			        <input class="form-control" name="email" placeholder="Email address*" type="email">
+			    </div> 
+
+			    <div id="email_error" class="val_error"></div>
+
+			    <div class="form-group input-group">
+					<div class="input-group-prepend">
+					    <span class="input-group-text"> <i class="fa fa-user-o"></i></span>
+					 </div>
+			        <input class="form-control" name="banner" placeholder="Banner ID" type="text">
+			    </div>
+
+			    <div id="banner_error" class="val_error"></div>
+
+			    
+			    <div class="form-group input-group">
+			    	<div class="input-group-prepend">
+					    <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+					</div>
+			    	<input class="form-control" name="phone" placeholder="123-456-7890" type="tel" pattern="\d{3}[\-]\d{3}[\-]\d{4}">
+			    </div> 
+
+			   <div id="phone_error" class="val_error"></div>
+			   
+			    <div class="form-group input-group">
+			    	<div class="input-group-prepend">
+					    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+					</div>
+			        <input class="form-control" name="password" placeholder="Password " minlength="8" type="password">
+			    </div>
+			    <div id="pass_error" class="val_error"></div>
+
+			    <div class="form-group input-group">
+			    	<div class="input-group-prepend">
+					    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+					</div>
+			        <input class="form-control" name="cpassword" placeholder="Confirm password" minlength="8" type="password">
+			    </div> 
+
+			    <div id="cpass_error" class="val_error"></div>
+
+			    <div class="form-group">
+			        <button type="submit" class="btn btn-primary btn-block"> Sign Up  </button>
+			    </div>     
+			    <p class="text-center" id="accountLabel">Have an account? <a href="loginform.html">Log In</a> </p>                                                                 
+			</form>
+
+			<script>
+						
+
+							var fullname =document.forms["logform"]["fullname"];
+							var email = document.forms["logform"]["email"];
+							var banner = document.forms["logform"]["banner"];
+							var phone = document.forms["logform"]["phone"];
+							var password = document.forms["logform"]["password"];
+							var cpassword = document.forms["logform"]["cpassword"];
+							
+							
+
+							var name_error = document.getElementById("name_error");
+							var email_error = document.getElementById("email_error");
+							var banner_error = document.getElementById("banner_error");
+							var phone_error = document.getElementById("phone_error");
+							var pass_error = document.getElementById("pass_error");
+							var cpass_error = document.getElementById("cpass_error");
+							
+							
+			
+														
+							fullname.addEventListener("blur", nameValidate, true);
+							email.addEventListener("blur", emailValidate, true);
+							banner.addEventListener("blur", bannerValidate, true);
+							phone.addEventListener("blur", phoneValidate, true);
+							password.addEventListener("blur", passValidate, true);
+							cpassword.addEventListener("blur", cpassValidate, true);
+						
+							
+
+							function validate()
+							{
+
+								if(fullname.value == "")
+								{
+									fullname.style.border = "1px solid red";
+									name_error.textContent ="Full name is required";
+									fullname.focus();
+									return false;
+									
+
+								}
+
+								if(email.value == "")
+								{
+									email.style.border = "1px solid red";
+									email_error.textContent ="Email is required";
+									email.focus();
+									return false;
+
+
+								}
+
+								if(banner.value == "")
+								{
+									banner.style.border = "1px solid red";
+									banner_error.textContent ="Banner ID is required";
+									banner.focus();
+									return false;
+									
+
+								}
+
+								if(phone.value == "")
+								{
+									phone.style.border = "1px solid red";
+									phone_error.textContent ="Phone number is required";
+									phone.focus();
+									return false;	
+
+								}
+
+								if(password.value == "")
+								{
+									password.style.border = "1px solid red";
+									pass_error.textContent ="Password is required";
+									password.focus();
+									return false;
+									
+
+								}
+
+								if(cpassword.value == "")
+								{
+									cpassword.style.border = "1px solid red";
+									cpass_error_error.textContent ="Confirm Password is required";
+									cpassword.focus();
+									return false;
+
+								}
+
+								
+
+								if(password.value != cpassword.value)
+								{
+									return false;
+								}		
+
+		
+							}
+
+
+							function bannerValidate()
+							{
+								if(banner.value !="")
+								{
+									banner.style.border = "1px solid #495057"
+									banner_error.innerHTML = "";
+									return true;
+
+								}
+							}
+
+							function emailValidate()
+							{
+
+								if(email.value !="")
+								{
+									email.style.border = "1px solid #495057"
+									email_error.innerHTML = "";
+									return true;
+
+								}
+
+							}
+
+							function passValidate()
+							{
+								if(password.value !="")
+								{
+									password.style.border = "1px solid #495057"
+									pass_error.innerHTML = "";
+									return true;
+
+								}
+							}
+
+							function cpassValidate()
+							{
+								if(cpassword.value !="")
+								{
+									cpassword.style.border = "1px solid #495057"
+									cpass_error.innerHTML = "";
+									return true;
+
+								}
+							}
+
+							function phoneValidate()
+							{
+								if(phone.value !="")
+								{
+									phone.style.border = "1px solid #495057"
+									phone_error.innerHTML = "";
+									return true;
+
+								}
+							}
+
+
+							function nameValidate()
+							{
+								if(fullname.value !="")
+								{
+									fullname.style.border = "1px solid #495057"
+									name_error.innerHTML = "";
+									return true;
+
+								}
+							}
+
+			</script>
+
+
+		</div>
+</div>
+</div>
+</body>
+</html>

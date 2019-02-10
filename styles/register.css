@@ -1,0 +1,41 @@
+.bgStyle{
+
+	background: url('../images/registerBG.jpg') no-repeat;
+	width: 100%;
+	height: 100vh;
+
+}
+
+.formStyle
+{
+	border: 0px solid;
+	border-color: #fff;
+	padding: 50px 60px;
+	-webkit-box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.71);
+	-moz-box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.71);
+	box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.71);
+	margin-top:15%;
+}
+
+#accountLabel
+{
+	color: #fff;
+}
+
+
+form h1
+{
+	color: #fff;
+}
+
+.val_error
+{
+	color: #fd3636;
+	font-weight: bolder;
+}
+
+
+#emailIcon
+{
+	font-size: small;
+}

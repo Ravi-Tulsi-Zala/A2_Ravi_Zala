@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login - DalEvents</title>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="styles/login.css">
+
+
+</head>
+<body>
+<div class="container-fluid bgStyle">
+
+	<div class="row">
+		<div class="col-md-4 col-sm-4 col-xs-12"></div>
+		<div class="col-md-4 col-sm-4 col-xs-12">
+
+			<form  method="POST" name="logform" action="index.html"  onsubmit="return validate();" class="formStyle">
+				<h1>DalEvents Login</h1>
+				<br/>
+			 	<div class="form-group input-group">
+			    	<div class="input-group-prepend">
+					    <span class="input-group-text" id="emailIcon"> <i class="fa fa-envelope"></i> </span>
+					 </div>
+			        <input class="form-control" name="email" placeholder="Email address" type="email">
+			        
+			    </div> 
+			    <div id="email_error" class="val_error"></div>
+
+			    <br/>
+
+			    <div class="form-group input-group">
+			    	<div class="input-group-prepend">
+					    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+					 </div>
+			        <input class="form-control" name="banner" placeholder="BannerID" type="text">
+			        
+			    </div> 
+			     <div id="banner_error" class="val_error"></div>
+			    <br/>
+
+			  	<div class="form-group input-group">
+			    	<div class="input-group-prepend">
+					    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+					</div>
+			        <input class="form-control" name="password" minlength="8" placeholder="Password" type="password">
+			         
+			    </div>
+			    <div id="pass_error" class="val_error"></div>
+			     
+			  	<div class="form-group form-check">
+			    	<input type="checkbox" class="form-check-input" id="exampleCheck1">
+			    	<label class="form-check-label" for="exampleCheck1" id="rememberLabel">Remember Me</label>
+			  	</div>
+			  	<div class="form-group">
+			        <button type="submit" class="btn btn-primary btn-block"> Log In </button>
+			    </div>   
+			</form>
+			
+			<script>
+					
+					
+
+							var email = document.forms["logform"]["email"];
+							var password = document.forms["logform"]["password"];
+							var banner = document.forms["logform"]["banner"];
+
+							var banner_error = document.getElementById("banner_error");
+							var email_error = document.getElementById("email_error");
+							var pass_error = document.getElementById("pass_error");
+
+							var user_email="ravizala100@gmail.com";
+							var user_pass="ravi1234";
+							var user_banner ="B00805073";
+
+							email.addEventListener("blur", emailValidate, true);
+
+							banner.addEventListener("blur", bannerValidate, true);
+
+							password.addEventListener("blur", passValidate, true);	
+
+
+							function validate()
+							{
+
+								if(email.value == "")
+								{
+									email.style.border = "1px solid red";
+									email_error.textContent ="Email is required";
+									email.focus();
+									return false;
+
+
+								}
+
+								if(password.value == "")
+								{
+									password.style.border = "1px solid red";
+									pass_error.textContent ="Password is required";
+									password.focus();
+									return false;
+									
+
+								}
+
+								if(banner.value == "")
+								{
+									banner.style.border = "1px solid red";
+									banner_error.textContent ="Banner ID is required";
+									banner.focus();
+									return false;
+									
+
+								}
+
+
+
+								if((email.value==user_email && password.value==user_pass && banner.value==user_banner))
+								{		
+								
+										return true;
+
+								}
+								else
+								{
+										return false;
+								}
+								
+
+
+							}
+
+
+							function bannerValidate()
+							{
+								if(banner.value !="")
+								{
+									banner.style.border = "1px solid #495057"
+									banner_error.innerHTML = "";
+									return true;
+
+								}
+							}
+
+							function emailValidate()
+							{
+
+								if(email.value !="")
+								{
+									email.style.border = "1px solid #495057"
+									email_error.innerHTML = "";
+									return true;
+
+								}
+
+							}
+
+							function passValidate()
+							{
+								if(password.value !="")
+								{
+									password.style.border = "1px solid #495057"
+									pass_error.innerHTML = "";
+									return true;
+
+								}
+							}
+			</script>
+
+
+		</div>
+	<div class="col-md-4 col-sm-4 col-xs-12"></div>
+		
+</div>
+</div>
+</body>
+</html>

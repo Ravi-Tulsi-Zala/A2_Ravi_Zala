@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>DalEvents</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker3.css" rel="stylesheet" id="bootstrap-css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" type="text/css" href="styles/indexStyle.css">
+
+
+</head>
+
+<body>
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark p-3 mb-2" id="navigationHome">
+  <a class="navbar-brand"  href="#">DalEvents</a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+
+   <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarContent">
+
+    <ul class="navbar-nav mr-auto">
+
+   
+      <li class="nav-item">
+        <a class="nav-link" href="#"> About Us </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#"> Contact Us </a>
+      </li>
+
+      
+
+      </ul>
+  	
+      <form class="form-inline my-2 my-lg-0">
+
+      <input class="form-control mr-sm-2" type="search" placeholder="Search Events" aria-label="Search">
+      <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search Events</button>
+
+
+    </form>
+
+    <ul class="navbar-nav nav-flex-icons">
+    	<li class="nav-item">
+        <a class="nav-link waves-effect waves-light">
+          <i class="fa fa-bell-o"></i>
+        </a>
+      </li>
+    	<li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          <i id="userIcon" class="fa fa-user-o"></i>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
+          <a class="dropdown-item" href="userProfile.html">User Profile</a>
+          <a class="dropdown-item" href="#">Your Tickets</a>
+          <a class="dropdown-item" href="#">Settings</a>
+          <a class="dropdown-item" href="home.html">Log Out</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<div id="eventCarousel" class="carousel slide" data-ride="carousel">
+<!-- Indicators -->
+<ol class="carousel-indicators">
+  <li data-target="#eventCarousel" data-slide-to="0" class="active"></li>
+  <li data-target="#eventCarousel" data-slide-to="1"></li>
+  <li data-target="#eventCarousel" data-slide-to="2"></li>
+</ol>
+
+<!-- Wrapper for slides -->
+
+<div class="carousel-inner">
+  <div  class="carousel-item active" style="background-image:url('images/image1.jpg');">
+    <img src="images/image1.jpg" alt="event1" style="width:65%;">
+  </div>
+
+  <div class="carousel-item" style="background-image:url('images/image2.jpg');">
+    <img src="images/image2.jpg" alt="event2" style="width:65%;">
+  </div>
+
+  <div class="carousel-item" style="background-image:url('images/image3.jpeg');">
+    <img src="images/image3.jpeg" alt="event3" style="width:65%;">
+  </div>
+</div>
+
+<!-- Left and right controls -->
+<a class="carousel-control-prev" href="#eventCarousel" data-slide="prev">
+  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+</a>
+
+<a class="carousel-control-next" href="#eventCarousel" data-slide="next">
+  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+</a>
+
+</div>
+
+
+
+<div id="categories" >
+	<p>Explore Events</p>	
+	
+    <button class="btn btn-default filter-button" data-filter="Workshops">Workshops</button>
+    <button class="btn btn-default filter-button" data-filter="Haelth">Health</button>
+    <button class="btn btn-default filter-button" data-filter="Cultural">Cultural</button>
+    <button class="btn btn-default filter-button" data-filter="Seminars">Seminars</button>
+    <button class="btn btn-default filter-button" data-filter="All">All</button>
+</div>
+
+
+<section id="cards">
+	<div class="row">
+		<div class="col-lg-8 col-md-8 col-sm-8">
+			<div class="row">
+				<div  class="card col-lg-4 col-md-4 col-sm-4">
+    				<img class="card-img-top" src="images/image1.jpg" alt="Card image cap">
+    				<div class="card-body">
+    					<h5 class="card-title">International Gala Event</h5>
+    					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    					tempor incididunt ut labore et dolore magna aliqua.</p>
+
+    					<a href="#" class="btn btn-primary bookButton">Book Now</a>
+ 					</div>
+				</div>
+
+				<div class="card col-lg-4 col-md-4 col-sm-4">
+			    	<img class="card-img-top" src="images/image2.jpg" alt="Card image cap">
+			    	<div class="card-body">
+			    		<h5 class="card-title">Success Party</h5>
+			    		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			    		tempor incididunt ut labore et dolore magna aliqua.</p>
+
+			    		<a href="#"  class="btn btn-primary bookButton">Book Now</a>
+			 		</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-4 col-md-4 col-sm-4">
+
+			
+		<div id="eventList" >
+			<div class="labelEvent inlineChild"><h4>Events by categories : </h4></div>
+			<div class="dropdown inlineChild" id="eventDropdown">
+			
+			  <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+			    aria-haspopup="true" aria-expanded="false">Categories</button>
+			
+			  <div class="dropdown-menu dropdown-primary">
+			    <a class="dropdown-item" href="#dropdownMenu1">Cultural Events</a>
+			    <a class="dropdown-item" href="#dropdownMenu1">Health</a>
+			    <a class="dropdown-item" href="#dropdownMenu1">Parties</a>
+			    <a class="dropdown-item" href="#dropdownMenu1">Workshops</a>
+			  </div>
+			</div>
+		</div>
+
+		<div id="label1" class="inlineChild1"><h4>Events by Date : </h4></div>
+		<div class="inlineChild1">
+		<div class='input-group date' id='datepicker'>
+            <input type='text' class="form-control" />
+            <span class="input-group-addon">
+               
+            </span>   
+		</div>
+		</div>
+<!--/Dropdown primary-->
+	</div>	
+	</div>
+</section>
+
+
+
+
+<footer class="page-footer">
+
+  <div class="footer-copyright text-center py-3">© 2018 Copyright:
+    <a href="#"> DalEvents</a>
+  </div>
+  <div id="icons">
+  <a href="#" class="fa fa-facebook"></a>
+  <a href="#" class="fa fa-instagram"></a>
+  <a href="#" class="fa fa-twitter"></a>
+  </div>
+
+</footer>
+<script >
+	    $(function () {
+	        $('#datepicker').datepicker({
+	            format: "dd/mm/yyyy",
+	            autoclose: true,
+	            todayHighlight: true,
+		        
+	        }).datepicker('update',new Date())
+	    });
+	</script>
+
+
+</body>
+</html>  

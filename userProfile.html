@@ -1,0 +1,123 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta tags, bootstrap , jquery and custom css and js are included in the head tag -->
+
+    <title>User Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="styles/profile.css">
+</head>
+<body>
+
+    <div class="container user-profile formStyle">
+    <form method="post" >
+        <!--- Thi row is divided in 4-6-2 column type grid withe responsiveness -->
+
+        <div class="row">   
+            <div class="col-md-4">
+
+                <!-- Snippet for Image Uploader-->
+
+               <div class="user-img">
+                    <img src="images/user.png" alt=""/>
+                    <div class="file btn btn-lg btn-primary">
+                         Change Picture
+                        <input type="file" name="file"/>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+                <div class="headerProfile">
+                            <h2>
+                                Ravi Zala
+                            </h2>
+                            <br/>
+                            <br/>
+                            <br/>
+
+                     <!-- Snippet for naigation tabs like About, Preferences, Change Password using UL and LI tags-->
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="preferences-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Preferences</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" id="password-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Change Passwrord</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-2">
+                
+            </div>
+         </div>
+             <!--- This row is divided in 4-8 column type grid withe responsiveness -->
+         <div class="row">
+             <div class="col-md-4">    
+            </div>
+
+            <!-- This column is useful for the content of the tabs -->
+            <div class="col-md-8">
+                <div class="tab-content preferences-tab" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Banner Id</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>B00805073</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Name</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>Ravi Zala</p>
+                            </div>
+                        </div>
+                         <div class="row">
+                            <div class="col-md-6">
+                                <label>Phone</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>123-456-7890</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Email</label>
+                            </div>
+                            <div class="col-md-6">
+                                <p>ravizala100@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="preferences-tab">
+                    <div class="row"></div>
+
+               </div>
+               <br/>
+
+               <input type="submit" class="profile-edit-btn btn-primary" name="btnAddMore" value="Edit Profile"/>
+            </div>
+        </div>
+    </form>           
+</div>
+</body>
+</html>
+
